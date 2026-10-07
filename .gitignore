@@ -1,0 +1,7 @@
+certs/
+Pharma-Blockchain copy/
+CIFAR-10_CNN/
+ML_GameAttributes_Prediction/
+.DS_Store
+node_modules/
+.wrangler/

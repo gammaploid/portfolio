@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Almosa - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J50FW7HM2"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6J50FW7HM2');
+    </script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <div class="container">
+        <header>
+            <div id="visualization-container">
+                <div id="circle-count"></div>
+            </div>
+            <div class="intro-text">
+                <div class="Typist">
+                   <span class="pre-intro">hi,</span> <span class="intro-title"><span class="intro-name">Hassan</span> here.</span>
+                    <span class="Cursor Cursor--blinking">|</span>
+                </div>
+                <p>Computer Science and AI Enthusiast</p>
+                <a href="#" class="say-hi-btn">
+                    <i class="fas fa-envelope"></i> say hi
+                </a>
+            </div>
+        </header>
+
+        <nav>
+            <button id="projects-btn" class="active">Projects</button>
+            <button id="about-btn">About</button>
+        </nav>
+
+        <main>
+            <section id="projects" class="projects">
+                <div class="project">
+                    <h3>Blockchain Solution for Pharmacutical Manufacturing Supply Chain </h3>
+                    <p>A blockchain-based supply chain solution for pharmaceutical manfacturing supplychain tracking and management built on Hyperledger Fabric, a highly scalable, permissioned blockchain framework that is cost-effecient and utilises Docker containers for peer nodes network</p>
+                    <a href="https://github.com/gammaploid/Pharma_Manfacturing-supplychain-blockchain" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>State Machines Simulation</h3>
+                    <p>Automata simulation using various state machines models (DFA, PDA, NPDA) using procedural programming in C</p>
+                    <a href="https://github.com/gammaploid/DFA-PDA-NPDA" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>Smart Manufacturing Dashboard</h3>
+                    <p>A web-based platform for monitoring and managing factory operations.</p>
+                    <a href="https://github.com/gammaploid/Group13-UX2030" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>CIFAR-10 Image Classification</h3>
+                    <p>Development and optimisation of various Convolutional Neural Network architectures trained on CIFAR-10 dataset.</p>
+                    <a href="https://github.com/gammaploid/NN_CFAIR10" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>ML Board Game Prediction</h3>
+                    <p>Building machine learning (regression and classification) models to predict board game attributes.</p>
+                    <a href="https://github.com/gammaploid/ML_BoardGame_Prediction" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>Engineers Without Borders Challenge</h3>
+                    <p>Developing a mangrove erosion control and stabilising structure for the Barron River.</p>
+                    <a href="projects/ِEWB_Challenge_Mangrove_Erosion_Control_System_and_Stabilising_Structure_for_The_Barron_River.pdf" target="_blank">View Project →</a>
+                </div>
+                <div class="project">
+                    <h3>WasteID</h3>
+                    <p>An innovative approach to waste management and identification.</p>
+                    <a href="/projects/WasteID.pdf" target="_blank">View Project →</a>
+                </div>
+                <div class="project">
+                    <h3>Data structures and String Matching Algorithms</h3>
+                    <p>Practice with implementation of fundamental data structures and string matching algorithms in Java</p>
+                    <a href="https://github.com/gammaploid/algorithms-and-data-structure-practice" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>Alphatron</h3>
+                    <p>Assembly language simulation in C++</p>
+                    <a href="https://github.com/gammaploid/Alphatron" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>Rolodex</h3>
+                    <p>Simple C++ implementation of a Rolodex (rotary card file) that allows you to insert, delete, and traverse cards (strings)</p>
+                    <a href="https://github.com/gammaploid/Rolodex" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+                <div class="project">
+                    <h3>Virtual Zoo</h3>
+                    <p>Virtual Zoo simulation program for OOP practice in Java</p>
+                    <a href="https://github.com/gammaploid/VirtualZoo" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub →
+                    </a>
+                </div>
+            </section>
+            <section id="about" class="about" style="display: none;">
+                <h2>About Me</h2>
+                <p class="intro">
+                    <strong>Computer Science</strong> and <strong>AI</strong> student enthused about exploring artificially intelligent systems and various computing domains, with cross-disciplinary interest in life sciences and chemistry. Awarded the <strong>Chancellor's Commendation List</strong> for academic excellence.
+                </p>
+                <p class="interests">
+                    Technical interests are in <span class="tech-item"><strong>ML/AI</strong></span>, <span class="tech-item"><strong>data science</strong></span>, <span class="tech-item"><strong>blockchain</strong></span>, <span class="tech-item"><strong>coding</strong></span>, <span class="tech-item"><strong>web development</strong></span>, <span class="tech-item"><strong>design</strong></span>, <span class="tech-item"><strong>big data</strong></span>, <span class="tech-item"><strong>IoT</strong></span>, <span class="tech-item"><strong>cloud</strong></span>, <span class="tech-item"><strong>cybersecurity</strong></span>, <span class="tech-item"><strong>edge intelligence</strong></span>, and <span class="tech-item"><strong>quantum computing</strong></span>. Scientific interests are in <span class="science-human"><strong>linguistics</strong></span>, <span class="science-human"><strong>psychology</strong></span>, <span class="science-human"><strong>neuroscience</strong></span>, <span class="science-human"><strong>medicinal chemistry</strong></span>, <span class="science-human"><strong>pharmacology</strong></span>, <span class="science-human"><strong>biochemistry</strong></span>, <span class="other-science"><strong>materials</strong></span>, <span class="other-science"><strong>quantum mechanics</strong></span>, and <span class="other-science"><strong>statistics</strong></span>.
+                </p>
+                <p class="personal">
+                    Beyond academic interests, I enjoy reading, art, cultures and folklore, travelling, and learning new things about the world and people.
+                </p>
+                <a href="projects/resume.pdf"  class="resume-btn">Download Resume</a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/gammaploid" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/hassan_bytes" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://huggingface.co/spindles" target="_blank"><i class="fab fa-hugging-face"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
