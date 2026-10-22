@@ -1,0 +1,417 @@
+/* Components: Windows 95 windows and wells, terminals, highlighted type, woven colour
+   fields, marquees, pixel numerals and stickers. Sections compose these; nothing here sets layout. */
+
+/* Windows */
+
+.win {
+    position: relative;
+    padding: 3px;
+    background: var(--face);
+    box-shadow: var(--raised);
+    color: var(--ink);
+}
+
+.win-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 22px;
+    padding: 2px 3px 2px 7px;
+    background: var(--ink);
+    color: var(--paper);
+    font: 700 var(--ui-size) / 1 var(--ui);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* A close button on the right of every title bar. */
+.win-bar::after {
+    content: "";
+    flex: none;
+    width: 16px;
+    height: 14px;
+    margin-left: auto;
+    background: var(--face) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='7' shape-rendering='crispEdges'%3E%3Cpath fill='%23121212' d='M0 0h2v1H0zM6 0h2v1H6zM1 1h2v1H1zM5 1h2v1H5zM2 2h4v1H2zM3 3h2v1H3zM2 4h4v1H2zM1 5h2v1H1zM5 5h2v1H5zM0 6h2v1H0zM6 6h2v1H6z'/%3E%3C/svg%3E") center / 8px 7px no-repeat;
+    box-shadow: var(--raised);
+}
+
+.win-body {
+    padding: 12px;
+    font: var(--ui-size) / 1.375 var(--ui);
+}
+
+/* A sunken well holds the window's content: paper for text, agal for screens. */
+.well {
+    background: var(--face-hi);
+    box-shadow: var(--sunken);
+    color: var(--ink);
+}
+
+.well-dark {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* Terminals: an MS-DOS window around an agal console */
+
+.term {
+    display: flex;
+    flex-direction: column;
+}
+
+.term pre {
+    flex: 1;
+    margin-top: 3px;
+    padding: 14px 16px 18px;
+    background: var(--ink);
+    box-shadow: var(--sunken);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: var(--mono-m);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.term .ok {
+    color: var(--teal);
+}
+
+.term .dim {
+    color: var(--fog);
+}
+
+.term a {
+    color: var(--teal);
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.62em;
+    height: 1.1em;
+    margin-left: 2px;
+    vertical-align: -0.2em;
+    background: var(--accent);
+    animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Type set on a solid agal band, line by line. */
+.hl {
+    padding: 0 0.14em;
+    background: var(--ink);
+    color: var(--paper);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* Colour fields: violet by default, teal on request, woven with small crosses and edged with a fringe. */
+
+.field {
+    position: relative;
+    background-color: var(--field, var(--field-violet));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'%3E%3Cpath fill='%23e7e4dd' fill-opacity='.18' d='M2 1h1v3H2zM1 2h3v1H1zM8 7h1v3H8zM7 8h3v1H7z'/%3E%3Cpath fill='%23121212' fill-opacity='.28' d='M5 4h1v1H5zM11 10h1v1h-1zM5 10h1v1H5zM11 4h1v1h-1z'/%3E%3C/svg%3E");
+    background-size: 12px 12px;
+}
+
+.field-teal {
+    --field: var(--field-teal);
+}
+
+.fringe {
+    margin-bottom: 18px;
+}
+
+.fringe::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 18px;
+    background:
+        repeating-linear-gradient(90deg, var(--field, var(--field-violet)) 0 2px, transparent 2px 9px) 0 0 / 100% 18px no-repeat,
+        repeating-linear-gradient(90deg, transparent 0 4px, rgba(18, 18, 18, 0.45) 4px 6px, transparent 6px 9px) 0 0 / 100% 11px no-repeat;
+    pointer-events: none;
+}
+
+.tag {
+    font-family: var(--mono);
+    font-size: var(--mono-m);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--teal);
+    white-space: nowrap;
+}
+
+.tag::before {
+    content: "[";
+}
+
+.tag::after {
+    content: "]";
+}
+
+.b64 {
+    font-family: var(--mono);
+    font-size: var(--mono-s);
+    line-height: 1.5;
+    color: rgba(231, 228, 221, 0.4);
+    overflow-wrap: anywhere;
+}
+
+/* Stack */
+
+.stack {
+    margin-top: clamp(5rem, 10vw, 8rem);
+    padding-block: 2.25rem 2.75rem;
+    border-block: 1px solid var(--line);
+    background: var(--char-2);
+}
+
+.stack-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stack-head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.row-ml { --dot: var(--violet); }
+.row-llm { --dot: var(--accent); }
+.row-data { --dot: var(--teal); }
+.row-sw { --dot: var(--fog); }
+
+/* Stack marquee */
+
+.marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.marquee + .marquee {
+    margin-top: 12px;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: marquee var(--dur, 70s) linear infinite;
+    animation-direction: var(--dir, normal);
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    background: var(--ink);
+    font-family: var(--mono);
+    font-size: var(--mono-m);
+    line-height: 1.3;
+    white-space: nowrap;
+    transition: border-color 0.2s;
+}
+
+.pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--dot, var(--accent));
+}
+
+.pill:hover {
+    border-color: rgba(231, 228, 221, 0.4);
+}
+
+.pill.is-key {
+    border: 0;
+    background: var(--face);
+    box-shadow: var(--raised);
+    color: var(--ink);
+    font: 700 var(--ui-size) / 1.3 var(--ui);
+}
+
+.pill.is-key::before {
+    background: var(--dot, var(--accent));
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee {
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .marquee-track {
+        flex-wrap: wrap;
+        width: auto;
+        padding-inline: var(--gutter);
+        row-gap: 10px;
+        animation: none;
+    }
+
+    .marquee-track [data-clone] {
+        display: none;
+    }
+}
+
+/* Pixel numerals, printed row by row like a dot-matrix head. */
+
+.pix-wrap {
+    position: relative;
+}
+
+.pix {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 17), 1fr);
+    gap: clamp(3px, 0.45vw, 6px);
+}
+
+.pix i {
+    aspect-ratio: 1;
+    background: rgba(231, 228, 221, 0.055);
+}
+
+.pix i.on {
+    transition: background-color 0.05s linear var(--d, 0s);
+}
+
+.pix.is-printed i.on {
+    background: var(--paper);
+}
+
+.pix-wrap::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 0;
+    height: calc(100% / 7);
+    border-top: 2px solid var(--accent);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pix-wrap.is-printing::after {
+    animation: print-head var(--print, 1.1s) steps(7, end) forwards;
+}
+
+@keyframes print-head {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(700%);
+    }
+}
+
+/* Holographic stickers */
+
+.sticker {
+    width: clamp(92px, 8.5vw, 124px);
+    transform: rotate(var(--tilt, -8deg));
+    transition: transform 0.4s var(--ease-out), filter 0.6s;
+}
+
+.card:hover .sticker {
+    transform: rotate(calc(var(--tilt, -8deg) * -0.6)) scale(1.06);
+    filter: hue-rotate(70deg) saturate(1.3);
+}
+
+/* Small drawings of data for the element cards */
+
+.viz-key {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 6px;
+}
+
+.ticks {
+    height: 34px;
+    background:
+        repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 20%) left bottom / 100% 100% no-repeat,
+        repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 2%) left bottom / 100% 55% no-repeat;
+}
+
+.dots {
+    position: relative;
+    width: 220px;
+    height: 66px;
+    background: radial-gradient(circle, transparent 0 2.6px, var(--ink) 2.8px 3.8px, transparent 4px) 0 0 / 11px 11px;
+}
+
+.dots::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33px;
+    height: 11px;
+    background: radial-gradient(circle, var(--ink) 3.8px, transparent 4px) 0 0 / 11px 11px;
+}
+
+.bars {
+    display: grid;
+    justify-items: start;
+    gap: 4px;
+}
+
+.bars p {
+    margin-top: 6px;
+}
+
+.bars p:first-child {
+    margin-top: 0;
+}
+
+.bars span {
+    width: calc(var(--v) * 100%);
+    min-width: max-content;
+    padding: 2px 6px;
+    background: rgba(18, 18, 18, 0.12);
+    white-space: nowrap;
+}
+
+.bars .is-new {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.diagram {
+    font-family: var(--mono);
+    font-size: var(--mono-s);
+    line-height: 1.25;
+    white-space: pre;
+    overflow: hidden;
+}

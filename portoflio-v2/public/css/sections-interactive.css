@@ -1,0 +1,419 @@
+/* Journey: one punch card per stop */
+
+.journey {
+    padding-block: clamp(5rem, 11vw, 9rem);
+    overflow: hidden;
+}
+
+.journey.is-pinned {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vh, 3rem);
+    height: 100vh;
+    padding-block: calc(var(--header-h) + 3vh) 3vh;
+}
+
+.journey-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem 3rem;
+}
+
+.journey-head .section-title {
+    max-width: 15ch;
+}
+
+.journey-hint {
+    font: var(--ui-size) / 1.3 var(--ui);
+    color: var(--fog);
+}
+
+.hint-pinned,
+.journey.is-pinned .hint-native {
+    display: none;
+}
+
+.journey.is-pinned .hint-pinned {
+    display: inline;
+}
+
+.journey-viewport {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+}
+
+.journey-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.journey.is-pinned .journey-viewport {
+    margin-top: 0;
+    overflow: hidden;
+    scroll-snap-type: none;
+}
+
+.journey .journey-track {
+    display: flex;
+    gap: clamp(1rem, 2vw, 1.75rem);
+    width: max-content;
+    padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
+}
+
+/* Card-stock punch cards with an accent stripe, punched with each stop in IBM card code. */
+.punch {
+    display: flex;
+    flex-direction: column;
+    width: clamp(18.5rem, 27vw, 24.5rem);
+    min-height: 27rem;
+    padding: 26px 22px 14px;
+    background: linear-gradient(var(--accent) 0 6px, #ebe4d2 6px);
+    color: var(--ink);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px);
+    scroll-snap-align: start;
+}
+
+.journey.is-pinned .section-title {
+    max-width: 22ch;
+    font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+}
+
+.journey.is-pinned .punch {
+    width: clamp(18rem, 22vw, 21rem);
+    min-height: 0;
+}
+
+.journey.is-pinned .stop-text {
+    font-size: 0.92rem;
+}
+
+.stop-year {
+    font-family: var(--mono);
+    font-size: 44px;
+    line-height: 1;
+}
+
+.punch h3 {
+    margin-top: 0.9rem;
+    font-weight: 650;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+}
+
+.stop-place {
+    margin-top: 0.3rem;
+    font: 700 var(--ui-size) / 1.3 var(--ui);
+    color: var(--accent-ink);
+}
+
+.stop-text {
+    max-width: 34ch;
+    margin-top: 0.7rem;
+    font-size: 0.97rem;
+    line-height: 1.5;
+    color: var(--stone-ink);
+}
+
+.punch-holes {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+
+.journey-axis {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.journey.is-pinned .journey-axis {
+    margin-top: 0;
+}
+
+.axis-track {
+    flex: 1;
+    height: 2px;
+    overflow: hidden;
+    background: var(--line);
+}
+
+.axis-fill {
+    height: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.journey-count {
+    font: var(--ui-size) / 1 var(--ui);
+    color: var(--fog);
+}
+
+/* Lab */
+
+.lab-head {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.lab-head p {
+    max-width: 44ch;
+    color: var(--fog);
+}
+
+.lab-grid {
+    display: grid;
+    align-items: start;
+    gap: 14px;
+}
+
+.lab-board {
+    margin-top: 3px;
+    padding: 2px;
+    background: var(--ink);
+    box-shadow: var(--sunken);
+}
+
+.lab-board canvas {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    background: var(--ink);
+    cursor: crosshair;
+    touch-action: pan-y;
+}
+
+.lab-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 12px;
+    padding: 10px 6px 6px;
+    font: var(--ui-size) / 1 var(--ui);
+}
+
+.seg {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.seg-options {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.seg input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.seg label {
+    display: grid;
+    place-items: center;
+    min-width: 34px;
+    height: 32px;
+    box-shadow: var(--raised);
+    cursor: pointer;
+}
+
+.seg input:checked + label {
+    box-shadow: var(--sunken);
+    background: var(--pressed);
+    font-weight: 700;
+}
+
+.seg input:focus-visible + label {
+    outline: 1px dotted var(--ink);
+    outline-offset: -5px;
+}
+
+/* A status bar of sunken panels along the bottom of the window. */
+.lab-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.lab-status div {
+    flex: 1 1 auto;
+    padding: 4px 8px 3px;
+    box-shadow: inset 1px 1px var(--stone), inset -1px -1px var(--face-hi);
+    white-space: nowrap;
+}
+
+.lab-status dt,
+.lab-status dd {
+    display: inline;
+}
+
+.lab-status dt {
+    margin-right: 0.4em;
+    color: var(--stone-ink);
+}
+
+.lab-side {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+}
+
+.lab-log pre {
+    height: 15.5rem;
+    overflow: hidden;
+}
+
+.life-win canvas {
+    width: 100%;
+    margin-top: 3px;
+    aspect-ratio: 2 / 1;
+    background: var(--ink);
+    box-shadow: var(--sunken);
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+
+.life-win .win-body {
+    padding: 8px 6px 4px;
+}
+
+@media (min-width: 1100px) {
+    .lab-head {
+        grid-template-columns: 1fr minmax(0, 26rem);
+        align-items: end;
+    }
+
+    .lab-grid {
+        grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .lab-board canvas {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* Contact, on a teal field */
+
+.contact-field {
+    padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.contact-grid {
+    display: grid;
+    gap: 3.5rem;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 5px 10px 4px;
+    background: var(--ink);
+    font: var(--ui-size) / 1 var(--ui);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--teal);
+    animation: blink 2.2s steps(1) infinite;
+}
+
+.contact-title {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: clamp(3.25rem, 9vw, 8.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+}
+
+.contact-lede {
+    max-width: 44ch;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+/* On the teal field, the main action switches to ink so it still stands apart. */
+.contact .btn-solid {
+    background: var(--ink);
+    box-shadow: inset -1px -1px #000, inset 1px 1px #4a4743, inset -2px -2px #2a2826, inset 2px 2px #34322f;
+}
+
+.copy-status {
+    min-height: 1.6em;
+    margin-top: 1rem;
+    font: var(--ui-size) / 1.4 var(--ui);
+}
+
+.copy-status:not(:empty) {
+    width: fit-content;
+    padding: 3px 8px;
+    background: var(--ink);
+}
+
+.contact-win {
+    align-self: end;
+}
+
+.well.elsewhere {
+    margin-top: 3px;
+    padding: 4px 12px;
+}
+
+.elsewhere a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0.25rem;
+    border-bottom: 1px dashed rgba(18, 18, 18, 0.25);
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.elsewhere li:last-child a {
+    border-bottom: 0;
+}
+
+.elsewhere a span {
+    font: var(--ui-size) / 1 var(--ui);
+    color: var(--stone-ink);
+}
+
+.elsewhere a:hover {
+    background: var(--accent);
+}
+
+.elsewhere a:hover span {
+    color: var(--ink);
+}
+
+@media (min-width: 960px) {
+    .contact-grid {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        gap: 5rem;
+    }
+}

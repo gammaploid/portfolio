@@ -1,0 +1,457 @@
+@font-face {
+    font-family: "Departure Mono";
+    src: url("../fonts/DepartureMono-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+/* Arabic pixel type by ArabianDev (CC BY 4.0): Adventure on a 13px grid, Basic on 11px. */
+@font-face {
+    font-family: "Arabixel Adventure";
+    src: url("../fonts/Arabixel-Adventure.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Arabixel Basic";
+    src: url("../fonts/Arabixel-Basic.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pixel Operator";
+    src: url("../fonts/PixelOperator.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pixel Operator";
+    src: url("../fonts/PixelOperator-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* Charcoal and paper, pink as the accent (magenta in the taskbar and hero), violet and teal
+   for fields and data. The chrome is Windows 95 in those colours. */
+:root {
+    --char: #1d1d1c;
+    --char-2: #262625;
+    --ink: #121212;
+    --paper: #e7e4dd;
+    --fog: #a29f97;
+    --face: #e4dfd4;
+    --face-light: #f1ede5;
+    --face-hi: #fffdf8;
+    --stone: #8f8a80;
+    --stone-ink: #5f5a52;
+    --line: rgba(231, 228, 221, 0.14);
+    --pink: #e58ca1;
+    --magenta: #d45cb6;
+    --accent: var(--pink);
+    --violet: #a481ff;
+    --teal: #3ccfae;
+    --field-violet: #6a52cf;
+    --field-teal: #1f7a6b;
+    --font: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --ui: "Pixel Operator", "MS Sans Serif", "Microsoft Sans Serif", Tahoma, Geneva, sans-serif;
+    --mono: "Departure Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --font-ar: "Arabixel Basic", "Geeza Pro", "Noto Kufi Arabic", sans-serif;
+    --font-ar-name: "Arabixel Adventure", "Arabixel Basic", "Geeza Pro", sans-serif;
+    /* Pixel Operator is drawn on a 16px grid and Departure Mono on 11px; these keep both square. */
+    --ui-size: 16px;
+    --mono-s: 11px;
+    --mono-m: 16.5px;
+    --raised: inset -1px -1px var(--ink), inset 1px 1px var(--face-hi), inset -2px -2px var(--stone), inset 2px 2px var(--face-light);
+    --sunken: inset -1px -1px var(--face-hi), inset 1px 1px var(--stone), inset -2px -2px var(--face-light), inset 2px 2px var(--ink);
+    --pressed: repeating-conic-gradient(var(--face-hi) 0 25%, var(--face) 0 50%) 0 0 / 2px 2px;
+    --gutter: clamp(16px, 4vw, 56px);
+    --max: 1360px;
+    --header-h: 40px;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    color-scheme: dark;
+}
+
+/* The taskbar and the hero carry magenta; everything else keeps the pink. */
+.taskbar,
+.progress,
+.hero {
+    --accent: var(--magenta);
+}
+
+/* Shades are mixed wherever the accent is set, so each scope gets its own. */
+:root,
+.taskbar,
+.progress,
+.hero {
+    --accent-hi: color-mix(in srgb, var(--accent) 55%, #fff);
+    --accent-deep: color-mix(in srgb, var(--accent) 62%, #000);
+    --accent-ink: color-mix(in srgb, var(--accent) 45%, #121212);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+}
+
+html.menu-open {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background: var(--char);
+    color: var(--paper);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+}
+
+img, svg, canvas {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, pre, fieldset {
+    margin: 0;
+}
+
+ul[class], ol[class] {
+    list-style: none;
+    padding: 0;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: fixed;
+    left: var(--gutter);
+    top: 6px;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--face);
+    box-shadow: var(--raised);
+    color: var(--ink);
+    font: var(--ui-size) / 1 var(--ui);
+    text-decoration: none;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+.wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+.section {
+    padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6.4vw, 5.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+/* A shell prompt stands in for each section's label. */
+.prompt {
+    font-family: var(--mono);
+    font-size: var(--mono-m);
+    line-height: 1.4;
+    color: var(--fog);
+}
+
+.ps1 {
+    color: var(--accent);
+}
+
+/* Taskbar */
+
+.progress {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    pointer-events: none;
+}
+
+.taskbar {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    background: var(--face);
+    box-shadow: inset 0 1px var(--face-hi), inset 0 -1px var(--ink), inset 0 -2px var(--stone);
+    color: var(--ink);
+    font: var(--ui-size) / 1 var(--ui);
+}
+
+.taskbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: var(--header-h);
+    padding: 0 6px 2px;
+}
+
+.start {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 30px;
+    padding: 0 10px 0 7px;
+    margin-right: auto;
+    box-shadow: var(--raised);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.start:active {
+    box-shadow: var(--sunken);
+    background: var(--pressed);
+}
+
+.brand-mark {
+    font-family: var(--font-ar-name);
+    font-size: 26px;
+    line-height: 1;
+    color: var(--accent-deep);
+}
+
+.nav ul {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 11px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    box-shadow: var(--raised);
+}
+
+/* The section on screen is the pressed button, the way the taskbar marks the open window. */
+.nav a[aria-current] {
+    box-shadow: var(--sunken);
+    background: var(--pressed);
+    font-weight: 700;
+}
+
+.tray {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    padding: 0 11px;
+    margin-left: 6px;
+    box-shadow: inset 1px 1px var(--stone), inset -1px -1px var(--face-hi);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 1159px) {
+    .tray {
+        display: none;
+    }
+}
+
+/* Phones: the menu opens like a Start menu, with a red banner down its side. */
+@media (max-width: 899px) {
+    .menu-btn {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        height: 30px;
+        padding: 0 14px;
+        border: 0;
+        background: var(--face);
+        box-shadow: var(--raised);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .taskbar.is-open .menu-btn {
+        box-shadow: var(--sunken);
+        background: var(--pressed);
+    }
+
+    .nav {
+        position: fixed;
+        top: calc(var(--header-h) - 2px);
+        left: 6px;
+        z-index: 1;
+        display: flex;
+        width: min(320px, calc(100vw - 12px));
+        padding: 3px;
+        background: var(--face);
+        box-shadow: var(--raised), 6px 6px 0 rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s, visibility 0s 0.15s;
+    }
+
+    .nav::before {
+        content: "Hassan Almosa";
+        padding: 12px 6px;
+        background: var(--accent);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .taskbar.is-open .nav {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s;
+    }
+
+    .nav ul {
+        flex: 1;
+        flex-direction: column;
+        gap: 0;
+        padding: 4px 0;
+    }
+
+    .nav a {
+        height: 52px;
+        padding: 0 16px;
+        font-size: 32px;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible,
+    .nav a[aria-current] {
+        box-shadow: none;
+        background: var(--accent);
+        color: var(--ink);
+        outline: none;
+    }
+}
+
+/* Buttons: Windows 95 push buttons, the accent for the main action */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 0;
+    background: var(--face);
+    box-shadow: var(--raised);
+    color: var(--ink);
+    font: var(--ui-size) / 1 var(--ui);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:active {
+    box-shadow: var(--sunken);
+    padding-top: 2px;
+}
+
+.btn:focus-visible {
+    outline: 1px dotted currentColor;
+    outline-offset: -7px;
+}
+
+.btn-solid {
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    box-shadow: inset -1px -1px var(--ink), inset 1px 1px var(--accent-hi), inset -2px -2px var(--accent-deep), inset 2px 2px var(--accent-hi);
+}
+
+.btn-solid:active {
+    box-shadow: inset 1px 1px var(--ink), inset -1px -1px var(--accent-hi), inset 2px 2px var(--accent-deep);
+}
+
+.btn-small {
+    min-height: 36px;
+    padding: 0 14px;
+}
+
+.text-link {
+    text-decoration: underline;
+    text-decoration-color: rgba(231, 228, 221, 0.4);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color 0.2s, color 0.2s;
+}
+
+.text-link:hover {
+    color: var(--teal);
+    text-decoration-color: var(--teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb3e1"/><stop offset=".22" stop-color="#c9b5ff"/><stop offset=".45" stop-color="#9cecff"/><stop offset=".66" stop-color="#b9ffd2"/><stop offset=".84" stop-color="#fff0a3"/><stop offset="1" stop-color="#ffb8c9"/></linearGradient><radialGradient id="s" cx=".3" cy=".22" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M52 24H122L152 54V170Q152 178 144 178H60Q52 178 52 170Z" transform="translate(6 8)" fill="#000" fill-opacity=".2"/>
+<path d="M52 24H122L152 54V170Q152 178 144 178H60Q52 178 52 170Z" fill="#fff" stroke="#fff" stroke-width="20"/>
+<path d="M52 24H122L152 54V170Q152 178 144 178H60Q52 178 52 170Z" fill="url(#h)" stroke="#141414" stroke-width="6"/>
+<path d="M52 24H122L152 54V170Q152 178 144 178H60Q52 178 52 170Z" fill="url(#s)"/>
+<path d="M122 24V48Q122 54 128 54H152" fill="#fff" fill-opacity=".7" stroke="#141414" stroke-width="6"/>
+<path d="M72 82H132M72 102H132M72 122H112M72 142H124" fill="none" stroke="#141414" stroke-width="7"/>
+<path d="M164 30l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#fff" stroke="#141414" stroke-width="4"/>
+</g></svg>

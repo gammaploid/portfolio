@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Almosa — Machine Learning Engineer</title>
+    <meta name="description" content="Hassan Almosa is a machine learning engineer in Dammam, Saudi Arabia, building document intelligence, drug discovery models, decision systems for air cargo and tools for language models.">
+    <link rel="canonical" href="https://hassan.sa/">
+    <meta name="theme-color" content="#1d1d1c">
+    <meta name="color-scheme" content="dark">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hassan.sa/">
+    <meta property="og:title" content="Hassan Almosa — Machine Learning Engineer">
+    <meta property="og:description" content="Machine learning systems for unstructured and streaming data.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@hassan_bytes">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <script>document.documentElement.className = 'js';</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/retro.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/sections-interactive.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J50FW7HM2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6J50FW7HM2');
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="js/covers.js"></script>
+    <script defer src="js/portrait-data.js"></script>
+    <script defer src="js/portrait.js"></script>
+    <script defer src="js/pixels.js"></script>
+    <script defer src="js/terminal.js"></script>
+    <script defer src="js/lab-kmeans.js"></script>
+    <script defer src="js/life.js"></script>
+    <script defer src="js/molecule.js"></script>
+    <script defer src="js/arabic.js"></script>
+    <script defer src="js/site.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" data-progress aria-hidden="true"></div>
+
+    <header class="taskbar" data-header>
+        <div class="taskbar-inner">
+            <a class="start" href="#home" aria-label="Hassan Almosa, back to top">
+                <span class="brand-mark" lang="ar" aria-hidden="true" data-ar>حسن</span>
+                <span>Hassan Almosa</span>
+            </a>
+            <nav class="nav" aria-label="Sections">
+                <ul id="nav-list">
+                    <li><a href="#about" data-spy>About</a></li>
+                    <li><a href="#build" data-spy>What I build</a></li>
+                    <li><a href="#work" data-spy>Work</a></li>
+                    <li><a href="#journey" data-spy>Journey</a></li>
+                    <li><a href="#lab" data-spy>Lab</a></li>
+                    <li><a href="#contact" data-spy>Contact</a></li>
+                </ul>
+            </nav>
+            <p class="tray" aria-label="Local time in Dammam">Dammam <span data-clock>--:--</span></p>
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-list" data-menu-btn>Menu</button>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <canvas class="hero-portrait" data-portrait role="img" aria-label="Portrait of Hassan Almosa written in binary digits, his red and white shemagh in Arabic numerals"></canvas>
+            <div class="wrap hero-inner">
+                <p class="prompt"><span class="ps1">hassan@dammam:~$</span> whoami</p>
+                <p class="hero-word" aria-hidden="true" data-decode-word><span class="g">whoami</span><span class="caret">_</span></p>
+                <div class="hero-out">
+                    <h1 class="hero-name" id="hero-title">Hassan Almosa</h1>
+                    <p class="hero-lede">Machine learning engineer in Dammam, Saudi Arabia. I build systems that find structure in unstructured and streaming data.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-solid" href="#work">See my work</a>
+                        <a class="btn" href="#contact">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="win decoder">
+                <p class="win-bar">decoder.exe</p>
+                <div class="win-body">
+                    <fieldset class="encoding">
+                        <legend>Write me in</legend>
+                        <label><input type="radio" name="encoding" value="01" checked>01</label>
+                        <label><input type="radio" name="encoding" value="hex">hex</label>
+                        <label><input type="radio" name="encoding" value="ar"><span lang="ar" dir="ltr">٠١</span></label>
+                    </fieldset>
+                    <p class="decoder-read">Reads: <output data-decoder-read>point at the portrait</output></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="wrap">
+                <p class="prompt"><span class="ps1">$</span> cat about.txt</p>
+                <h2 class="visually-hidden" id="about-title">About</h2>
+                <div class="about-grid">
+                    <p class="about-bio" data-wordlit>I'm Hassan, a machine learning engineer from Dammam, Saudi Arabia. I studied bioscience and chemistry before computer science, and I still build for the data that real work produces: half-legible archives, compound libraries, air-cargo floors. Two-time academic excellence awardee, and a national AI hackathon winner.</p>
+                    <div class="win notepad">
+                        <p class="win-bar">facts.txt - Notepad</p>
+                        <dl class="well facts">
+                            <div><dt>Based in</dt><dd>Dammam, Saudi Arabia</dd></div>
+                            <div><dt>Languages</dt><dd>Arabic (native) and English (fluent)</dd></div>
+                            <div><dt>Studied</dt><dd>Computer Science (AI) at Flinders University, GPA 6.36/7, after chemistry and bioscience at La Trobe</dd></div>
+                            <div><dt>Certified</dt><dd>NVIDIA Generative AI and LLMs, MLOps and AI Deployment, Cisco CyberOps</dd></div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="awards">
+                    <p class="prompt"><span class="ps1">$</span> cat awards.txt</p>
+                    <h3 class="visually-hidden">Awards</h3>
+                    <ul class="award-list">
+                        <li class="award">
+                            <div class="pix-wrap"><div class="pix" data-pixnum="3rd" aria-hidden="true"></div></div>
+                            <div>
+                                <p class="award-where">AgentX National AI Hackathon, 2026</p>
+                                <h4 class="award-title">3rd of 173 teams <span class="tag">national</span></h4>
+                                <p class="award-note">Sole developer and architect in a cross-functional team, in the Logistics and Ports track of SAL's Air Cargo Operations Challenge. The project was Mirsad.</p>
+                            </div>
+                        </li>
+                        <li class="award">
+                            <div class="pix-wrap"><div class="pix" data-pixnum="2×" aria-hidden="true"></div></div>
+                            <div>
+                                <p class="award-where">Flinders University, 2023 and 2025</p>
+                                <h4 class="award-title">Chancellor's Letter of Commendation <span class="tag">university</span></h4>
+                                <p class="award-note">Awarded twice for academic excellence while studying computer science.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="award-more">
+                        <li>Go Beyond Excellence Scholarship, Flinders University, 2023</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stack">
+                <div class="wrap stack-head"><p class="prompt"><span class="ps1">$</span> ls ~/stack</p><span class="rule" aria-hidden="true"></span></div>
+                <h3 class="visually-hidden">What I work with</h3>
+                <div class="marquee row-ml" style="--dur: 85s"><div class="marquee-track"><span class="pill is-key">ml</span><span class="pill">PyTorch</span><span class="pill">scikit-learn</span><span class="pill">XGBoost</span><span class="pill">LightGBM</span><span class="pill">River</span><span class="pill">PySAD</span><span class="pill">RDKit</span><span class="pill">Transformers</span><span class="pill">MLX</span><span class="pill">MLflow</span><span class="pill">DVC</span><span class="pill">graph neural networks</span><span class="pill">autoencoders</span></div></div>
+                <div class="marquee row-llm" style="--dur: 75s; --dir: reverse"><div class="marquee-track"><span class="pill is-key">llms</span><span class="pill">RAG</span><span class="pill">tool-calling agents</span><span class="pill">MCP</span><span class="pill">LangChain</span><span class="pill">LoRA and PEFT</span><span class="pill">RLHF</span><span class="pill">embeddings</span><span class="pill">LLM evaluation</span><span class="pill">NVIDIA NIM</span><span class="pill">Triton</span><span class="pill">local models</span></div></div>
+                <div class="marquee row-data" style="--dur: 80s"><div class="marquee-track"><span class="pill is-key">data</span><span class="pill">Kafka</span><span class="pill">Spark Streaming</span><span class="pill">Quix</span><span class="pill">PostgreSQL</span><span class="pill">ChromaDB</span><span class="pill">vector search</span><span class="pill">knowledge graphs</span><span class="pill">entity resolution</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">ETL</span></div></div>
+                <div class="marquee row-sw" style="--dur: 90s; --dir: reverse"><div class="marquee-track"><span class="pill is-key">code</span><span class="pill">Python</span><span class="pill">C and C++</span><span class="pill">Go</span><span class="pill">Java</span><span class="pill">TypeScript</span><span class="pill">SQL</span><span class="pill">Prolog</span><span class="pill">Haskell</span><span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">GCP</span><span class="pill">AWS</span><span class="pill">Cloudflare Workers</span></div></div>
+            </div>
+        </section>
+
+        <section class="section build" id="build" aria-labelledby="build-title">
+            <div class="wrap">
+                <div class="build-head">
+                    <h2 class="section-title" id="build-title">What I build</h2>
+                    <p>The four elements of my work. Each takes something messy in and hands back something a person, or a program, can act on.</p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="element el-accent"><span class="el-num" aria-hidden="true">01</span><span class="el-mass" aria-hidden="true">50 yr</span><span class="el-sym" aria-hidden="true">Ex</span><h3 class="el-name">Extract</h3></div>
+                            <img class="sticker" src="img/sticker-doc.svg" alt="" width="124" height="124" style="--tilt: -9deg">
+                        </div>
+                        <p class="card-kind">Documents in, records out</p>
+                        <dl class="card-spec"><div><dt>Input</dt><dd>50 years of grant records in mixed formats</dd></div><div><dt>Output</dt><dd>One searchable database and knowledge graph</dd></div></dl>
+                        <div class="card-viz" aria-hidden="true"><div class="ticks"></div><p class="viz-key"><span>50 years</span><span>1 tick = 1 year</span></p></div>
+                        <p class="card-tools">OCR, ChromaDB, entity resolution</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="element el-violet"><span class="el-num" aria-hidden="true">02</span><span class="el-mass" aria-hidden="true">~3k</span><span class="el-sym" aria-hidden="true">Rk</span><h3 class="el-name">Rank</h3></div>
+                            <img class="sticker" src="img/sticker-molecule.svg" alt="" width="124" height="118" style="--tilt: 7deg">
+                        </div>
+                        <p class="card-kind">Molecules in, candidates out</p>
+                        <dl class="card-spec"><div><dt>Input</dt><dd>About 3,000 compounds and their structures</dd></div><div><dt>Output</dt><dd>TAAR1 candidates in order, each with a reason</dd></div></dl>
+                        <div class="card-viz" aria-hidden="true"><div class="dots"></div><p class="viz-key"><span>~3,000 compounds</span><span>1 ring = 25</span></p></div>
+                        <p class="card-tools">RDKit, XGBoost, graph networks, Prolog</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="element el-teal"><span class="el-num" aria-hidden="true">03</span><span class="el-mass" aria-hidden="true">−54%</span><span class="el-sym" aria-hidden="true">Dc</span><h3 class="el-name">Decide</h3></div>
+                            <img class="sticker" src="img/sticker-crate.svg" alt="" width="124" height="124" style="--tilt: -6deg">
+                        </div>
+                        <p class="card-kind">Shipments in, placements out</p>
+                        <dl class="card-spec"><div><dt>Input</dt><dd>Air cargo arriving at a storage area</dd></div><div><dt>Output</dt><dd>A placement, and how much autonomy it gets</dd></div></dl>
+                        <div class="card-viz bars" aria-hidden="true"><p>Relocations per 100 shipments</p><span style="--v: 1">303 before</span><span class="is-new" style="--v: 0.462">140 with Mirsad</span><p>Dig-outs</p><span style="--v: 1">71%</span><span class="is-new" style="--v: 0.197">14%</span></div>
+                        <p class="card-tools">SimPy, LightGBM, FastAPI</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="element el-ink"><span class="el-num" aria-hidden="true">04</span><span class="el-mass" aria-hidden="true">MCP</span><span class="el-sym" aria-hidden="true">Cn</span><h3 class="el-name">Connect</h3></div>
+                            <img class="sticker" src="img/sticker-plug.svg" alt="" width="124" height="124" style="--tilt: 8deg">
+                        </div>
+                        <p class="card-kind">Data in, tools out</p>
+                        <dl class="card-spec"><div><dt>Input</dt><dd>A national economic dataset</dd></div><div><dt>Output</dt><dd>Analysis and forecasting tools any LLM can call</dd></div></dl>
+<pre class="card-viz diagram" aria-hidden="true">LLM client
+   │ OAuth
+┌──┴──────────────┐
+│ analyse         │
+│ forecast        │
+└──┬──────────────┘
+   │
+PostgreSQL</pre>
+                        <p class="card-tools">Cloudflare Workers, OAuth, PostgreSQL</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section work" id="work" aria-labelledby="work-title">
+            <div class="wrap">
+                <div class="work-head">
+                    <h2 class="section-title" id="work-title">Selected work</h2>
+                    <p class="work-intro">Projects from industry, research and competition. Most have code you can read, and one is live. The full list is in my <a class="text-link" href="Hassan-Almosa-CV.pdf">résumé (PDF)</a>.</p>
+                </div>
+
+                <article class="flag" aria-labelledby="mirsad-title">
+                    <div class="field flag-field fringe">
+                        <div class="flag-grid">
+                            <div class="win is-paper stat-win stat-main"><p class="win-bar">Relocations per 100 shipments</p><div class="win-body"><p class="stat">303 → 140</p><p class="stat-note">Paired simulation over 8 seeds, without and with Mirsad</p></div></div>
+                            <div class="win term" data-type><p class="win-bar">~/mirsad</p><pre><span class="ps1">$</span> <span data-cmd>systemctl status mirsad</span>
+<span data-out><span class="ok">●</span> mirsad.service: air-cargo decisions
+  Active: <span class="ok">active (running)</span>
+  Serves: dashboard, three.js twin
+  Url:    <a href="https://mirsad.hassan.sa" target="_blank" rel="noopener">mirsad.hassan.sa</a>
+
+<span class="ps1">$</span> cat mirsad/pipeline
+<span class="dim">placement</span>  deterministic, on SimPy
+<span class="dim">forecast</span>   occupancy, next 48 hours
+<span class="dim">dwell</span>      LightGBM
+<span class="dim">autonomy</span>   Jev, fail-closed gate
+<span class="dim">llm</span>        words only, never numbers</span><span class="cursor" aria-hidden="true"></span></pre></div>
+                            <figure class="win yard-win"><p class="win-bar">yard.svg</p><div class="case-cover" data-cover="yard" role="img" aria-label="Illustration: a storage yard grid with incoming shipments placed by Mirsad"></div></figure>
+                            <div class="win is-paper stat-win stat-small stat-digs"><p class="win-bar">Dig-outs</p><div class="win-body"><p class="stat">71% → 14%</p></div></div>
+                        </div>
+                    </div>
+                    <div class="flag-body">
+                        <div>
+                            <p class="case-context">AgentX National AI Hackathon 2026, 3rd place</p>
+                            <h3 class="case-title" id="mirsad-title">Mirsad</h3>
+                            <p class="case-sub">An AI decision layer for air-cargo storage</p>
+                            <div class="case-links"><a class="btn btn-solid" href="https://mirsad.hassan.sa" target="_blank" rel="noopener">Open Mirsad</a></div>
+                        </div>
+                        <div>
+                            <p class="case-desc">Built for SAL's Air Cargo Operations Challenge, where I was the sole developer and architect. Placement is deterministic and runs on a SimPy simulator, with a 48-hour occupancy forecast and a LightGBM model of how long each shipment stays. TypeSafe's Jev, a System One model, sets how much autonomy each action gets, behind a rules gate that fails closed. The language model never produces a number.</p>
+                            <p class="case-desc">It ships as a FastAPI service with live simulation, a React dashboard, a three.js digital twin, a chat agent backed by HUMAIN and an integration layer for the cargo operations system's API.</p>
+                            <p class="chips"><span class="chip">SimPy</span><span class="chip">LightGBM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">three.js</span></p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="cases">
+                    <article class="case">
+                        <figure class="win case-media"><p class="win-bar">~/moleculetron</p><div class="case-cover" data-cover="molecule" role="img" aria-label="Illustration: a fused-ring molecule above its fingerprint bits"></div></figure>
+                        <div class="case-body">
+                            <p class="case-context">Capstone project, Flinders University</p>
+                            <h3 class="case-title">Moleculetron</h3>
+                            <p class="case-sub">Explainable QSAR for neuropsychiatric drug discovery</p>
+                            <p class="case-desc">Predicts TAAR1 receptor ligand activity across roughly 3,000 compounds. The pipeline builds 3D conformers, structural descriptors and pharmacophore patterns, compares random forest, XGBoost, a multilayer perceptron and message-passing graph neural networks, and pairs them with symbolic inference in Prolog so every candidate comes with a reason.</p>
+                            <p class="chips"><span class="chip"><b>~3,000</b> compounds</span><span class="chip"><b>4</b> model families</span><span class="chip">Prolog</span></p>
+                            <div class="case-links"><a class="text-link" href="https://github.com/gammaploid/Moleculetron" target="_blank" rel="noopener">View code on GitHub</a><a class="text-link" href="https://github.com/gammaploid/Moleculetron-neurosymbolic-" target="_blank" rel="noopener">Neurosymbolic version</a></div>
+                        </div>
+                    </article>
+
+                    <article class="case">
+                        <figure class="win case-media"><p class="win-bar">~/grant-records</p><div class="case-cover" data-cover="graph" role="img" aria-label="Illustration: a knowledge graph linking grants, researchers and publications"></div></figure>
+                        <div class="case-body">
+                            <p class="case-context">Research and development internship, NovitaTech</p>
+                            <h3 class="case-title">Grant records platform</h3>
+                            <p class="case-sub">Document intelligence for 50 years of research grants</p>
+                            <p class="case-desc">As sole developer, I built a five-stage pipeline that turned roughly 1,000 grant awards in inconsistent formats into one queryable database. A locally hosted model handles OCR, ChromaDB embeddings drive retrieval, entity resolution against DOI, PubMed and ORCID links researchers to their grants and papers, and a RAG stage recovers fields the records left out. A review screen with a person in the loop and an analytics dashboard replaced a slow manual process.</p>
+                            <p class="chips"><span class="chip"><b>50</b> years</span><span class="chip"><b>~1,000</b> awards</span><span class="chip"><b>5</b> stages</span></p>
+                        </div>
+                    </article>
+
+                    <article class="case">
+                        <figure class="win case-media"><p class="win-bar">~/economic-mcp</p><div class="case-cover" data-cover="hub" role="img" aria-label="Illustration: an LLM client connected to analysis and forecasting tools"></div></figure>
+                        <div class="case-body">
+                            <h3 class="case-title">Economic data MCP server</h3>
+                            <p class="case-sub">Model Context Protocol tools for a national economic dataset</p>
+                            <p class="case-desc">A serverless MCP server on Cloudflare Workers that gives LLM clients analytical and forecasting tools over a large national economic dataset, with OAuth sign-in, a PostgreSQL data layer and third-party API integrations.</p>
+                            <p class="chips"><span class="chip">Cloudflare Workers</span><span class="chip">OAuth</span><span class="chip">PostgreSQL</span></p>
+                            <div class="case-links"><a class="text-link" href="https://github.com/gammaploid/SAMA_mcp_tool" target="_blank" rel="noopener">View code on GitHub</a></div>
+                        </div>
+                    </article>
+
+                    <article class="case">
+                        <figure class="win case-media"><p class="win-bar">~/pharma-chain</p><div class="case-cover" data-cover="chain" role="img" aria-label="Illustration: linked blocks of supply chain records"></div></figure>
+                        <div class="case-body">
+                            <h3 class="case-title">Pharmaceutical supply chain</h3>
+                            <p class="case-sub">Permissioned blockchain tracking on Hyperledger Fabric</p>
+                            <p class="case-desc">Smart contracts on a permissioned network that track medicines between supply chain stakeholders. Dockerised chain nodes, a Go and Node.js backend, Redis-cached microservices, role-based access and REST APIs for end-to-end traceability.</p>
+                            <p class="chips"><span class="chip">Hyperledger Fabric</span><span class="chip">Go</span><span class="chip">Node.js</span><span class="chip">Redis</span></p>
+                            <div class="case-links"><a class="text-link" href="https://github.com/gammaploid/pharma-manufacturer-supplychain-blockchain" target="_blank" rel="noopener">View code on GitHub</a></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="archive">
+                    <p class="prompt"><span class="ps1">$</span> ls ~/projects --more</p>
+                    <h3 class="visually-hidden">More projects</h3>
+                    <ul class="archive-list">
+                        <li><a href="https://github.com/gammaploid/streaming-data-anomaly-detection" target="_blank" rel="noopener"><span class="archive-name">IoT anomaly detection</span><span class="archive-desc">Online detectors benchmarked over 2.2 million network flows replayed through Kafka</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/generative-art-multithreaded-cellular-automaton" target="_blank" rel="noopener"><span class="archive-name">Game of Life, multithreaded</span><span class="archive-desc">Conway's cellular automaton as generative art, in Java</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/convolutional-neural-net-image-classifier" target="_blank" rel="noopener"><span class="archive-name">Image classification with CNNs</span><span class="archive-desc">ResNet and VGG-style networks for CIFAR-10, tuned systematically</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/machine-learning-board-games-predictor" target="_blank" rel="noopener"><span class="archive-name">Board game attribute prediction</span><span class="archive-desc">Regression and classification on the Ludii games dataset</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/web-smart-manufacturing-dashaboard" target="_blank" rel="noopener"><span class="archive-name">Smart manufacturing dashboard</span><span class="archive-desc">Real-time factory monitoring in PHP and MySQL</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="projects/EWB_Challenge_Barron_River.pdf" target="_blank" rel="noopener"><span class="archive-name">Engineers Without Borders challenge</span><span class="archive-desc">Led a multidisciplinary team on riverbank erosion for Queensland's Djabugandji community</span><span class="archive-kind">pdf</span></a></li>
+                        <li><a href="projects/WasteID.pdf" target="_blank" rel="noopener"><span class="archive-name">WasteID</span><span class="archive-desc">Led development of recycling guidance from barcode and image recognition</span><span class="archive-kind">pdf</span></a></li>
+                        <li><a href="https://github.com/gammaploid/procedural-oriented-state-machines" target="_blank" rel="noopener"><span class="archive-name">State machines, three ways</span><span class="archive-desc">DFA and pushdown automata in C, with C++ and Haskell versions</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/algorithms-and-data-structures" target="_blank" rel="noopener"><span class="archive-name">Data structures and algorithms</span><span class="archive-desc">Fundamental structures and string matching in Java</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/Alphatron" target="_blank" rel="noopener"><span class="archive-name">Alphatron</span><span class="archive-desc">An assembly language simulator in C++</span><span class="archive-kind">code</span></a></li>
+                        <li><a href="https://github.com/gammaploid/virtual-zoo" target="_blank" rel="noopener"><span class="archive-name">Virtual Zoo</span><span class="archive-desc">Object-oriented simulation in Java</span><span class="archive-kind">code</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="journey" id="journey" aria-labelledby="journey-title" data-journey>
+            <div class="wrap journey-head">
+                <h2 class="section-title" id="journey-title">From the chemistry lab to machine learning</h2>
+                <p class="journey-hint"><span class="hint-pinned">Keep scrolling to move through the years</span><span class="hint-native">Scroll sideways to move through the years</span></p>
+            </div>
+            <div class="journey-viewport" data-journey-viewport tabindex="0" role="region" aria-label="Timeline">
+                <ol class="journey-track" data-journey-track>
+                    <li class="punch"><p class="stop-year">2014</p><h3>Diploma of Bioscience</h3><p class="stop-place">La Trobe University, Melbourne</p><p class="stop-text">Two years of biology and lab work, through 2015.</p></li>
+                    <li class="punch"><p class="stop-year">2016</p><h3>Bachelor of Science, chemistry</h3><p class="stop-place">La Trobe University, Melbourne</p><p class="stop-text">Three years of chemistry coursework, through 2018.</p></li>
+                    <li class="punch"><p class="stop-year">2019</p><h3>IT and managerial assistant</h3><p class="stop-place">Eastern Constructions, Dammam</p><p class="stop-text">Ran servers, networks and databases across office and project sites until 2021, and digitised payroll, accounting and tax compliance.</p></li>
+                    <li class="punch"><p class="stop-year">2023</p><h3>Computer Science (AI)</h3><p class="stop-place">Flinders University, Adelaide</p><p class="stop-text">Started on the Go Beyond Excellence Scholarship. A Chancellor's Commendation and Cisco CyberOps Associate the same year.</p></li>
+                    <li class="punch"><p class="stop-year">2025</p><h3>Research and development intern</h3><p class="stop-place">NovitaTech, Adelaide</p><p class="stop-text">Sole developer of the grant records platform, August 2025 to January 2026. A second Chancellor's Commendation.</p></li>
+                    <li class="punch"><p class="stop-year">2026</p><h3>Graduated, then 3rd at AgentX</h3><p class="stop-place">Flinders University and Dammam</p><p class="stop-text">GPA 6.36 out of 7. Certified by NVIDIA in generative AI and LLMs, then 3rd of 173 teams with Mirsad.</p></li>
+                    <li class="punch"><p class="stop-year">Now</p><h3>Independent projects and research</h3><p class="stop-place">Dammam</p><p class="stop-text">Designing an AI platform for customs and logistics compliance, and researching medical AI for ophthalmology in Saudi Arabia.</p></li>
+                </ol>
+            </div>
+            <div class="wrap journey-axis">
+                <div class="axis-track"><div class="axis-fill" data-journey-fill></div></div>
+                <p class="journey-count" aria-hidden="true"><span data-journey-count>1</span> of 7</p>
+            </div>
+        </section>
+
+        <section class="section lab" id="lab" aria-labelledby="lab-title">
+            <div class="wrap">
+                <div class="lab-head">
+                    <h2 class="section-title" id="lab-title">Give it some data</h2>
+                    <p>Click or drag on the board to add points. k-means sorts them into groups and redraws the boundaries as it goes, and the log on the right prints every step.</p>
+                </div>
+                <div class="lab-grid">
+                    <div class="win lab-win">
+                        <p class="win-bar">kmeans.exe</p>
+                            <div class="lab-board"><canvas data-lab-canvas role="img" aria-label="k-means clustering board. Click to add points."></canvas></div>
+                            <div class="lab-controls">
+                                <div class="seg" role="radiogroup" aria-labelledby="lab-k-label">
+                                    <span class="seg-label" id="lab-k-label">Groups</span>
+                                    <div class="seg-options">
+                                        <input type="radio" name="lab-k" id="lab-k2" value="2"><label for="lab-k2">2</label>
+                                        <input type="radio" name="lab-k" id="lab-k3" value="3" checked><label for="lab-k3">3</label>
+                                        <input type="radio" name="lab-k" id="lab-k4" value="4"><label for="lab-k4">4</label>
+                                        <input type="radio" name="lab-k" id="lab-k5" value="5"><label for="lab-k5">5</label>
+                                        <input type="radio" name="lab-k" id="lab-k6" value="6"><label for="lab-k6">6</label>
+                                    </div>
+                                </div>
+                                <button class="btn btn-small" type="button" data-lab-new>New data</button>
+                                <button class="btn btn-small" type="button" data-lab-clear>Clear board</button>
+                                <dl class="lab-status" aria-live="polite">
+                                    <div><dt>points</dt><dd data-lab-points>0</dd></div>
+                                    <div><dt>iter</dt><dd data-lab-iter>0</dd></div>
+                                    <div><dt>state</dt><dd data-lab-status>settled</dd></div>
+                                </dl>
+                            </div>
+                    </div>
+                    <div class="lab-side">
+                        <div class="win term lab-log"><p class="win-bar">~/lab</p><pre data-lab-log></pre></div>
+                        <div class="win life-win">
+                            <p class="win-bar">life.exe</p>
+                            <div class="win-body">
+                                <canvas data-life role="img" aria-label="Conway's Game of Life. Click to reseed."></canvas>
+                                <p>Conway's Game of Life. Click to reseed. I also wrote a <a class="text-link" href="https://github.com/gammaploid/generative-art-multithreaded-cellular-automaton" target="_blank" rel="noopener">multithreaded one in Java</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="field field-teal contact-field fringe">
+                <div class="wrap contact-grid">
+                    <div>
+                        <p class="status"><span class="status-dot" aria-hidden="true"></span>Available for work</p>
+                        <h2 class="contact-title" id="contact-title"><span class="hl">Get in touch</span></h2>
+                        <p class="contact-lede"><span class="hl">I'm looking for machine learning and software engineering roles, and I'm glad to talk about research collaborations. Email reaches me fastest.</span></p>
+                        <div class="contact-actions">
+                            <a class="btn btn-solid" href="#contact" data-email-link>Email me</a>
+                            <button class="btn" type="button" data-email-copy>Copy email address</button>
+                        </div>
+                        <p class="copy-status" role="status" data-copy-status></p>
+                    </div>
+                    <div class="win is-paper contact-win">
+                        <p class="win-bar">~/elsewhere</p>
+                        <ul class="well elsewhere">
+                            <li><a href="https://github.com/gammaploid" target="_blank" rel="noopener">GitHub <span>gammaploid</span></a></li>
+                            <li><a href="https://www.linkedin.com/in/hassan-4lmosa" target="_blank" rel="noopener">LinkedIn <span>hassan-4lmosa</span></a></li>
+                            <li><a href="https://twitter.com/hassan_bytes" target="_blank" rel="noopener">X <span>@hassan_bytes</span></a></li>
+                            <li><a href="https://huggingface.co/spindles" target="_blank" rel="noopener">Hugging Face <span>spindles</span></a></li>
+                            <li><a href="Hassan-Almosa-CV.pdf" target="_blank" rel="noopener">Résumé <span>pdf</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <figure class="win mol-win">
+                <p class="win-bar">phenethylamine.mol</p>
+                <canvas data-molecule aria-hidden="true"></canvas>
+                <figcaption>β-phenylethylamine, a trace amine that switches on TAAR1, the receptor Moleculetron models.</figcaption>
+            </figure>
+            <div class="sadu" lang="ar" dir="rtl">
+                <p class="ar-bubble" data-ar>حسن الموسى</p>
+                <p class="ar-lines"><span data-ar>مهندس تعلم الآلة</span> <span data-ar>من الدمام</span> <span data-ar>أبني أنظمة تكتشف</span> <span data-ar>الأنماط في البيانات</span> <span data-ar>غير المنظمة</span></p>
+            </div>
+        </div>
+        <div class="wrap footer-meta">
+            <p>Hassan Almosa. Made in Dammam.</p>
+            <p>(c) <span data-year>2026</span>, <a href="#home">back to top</a></p>
+            <p>Arabic type: <a href="https://arabiandev.itch.io/arabixel-adventure-font" target="_blank" rel="noopener">Arabixel</a> by ArabianDev, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+            <p class="b64">[B.64] eW91IGRlY29kZWQgaXQuIHNheSBoaSBhdCBoYXNzYW4uc2EvI2NvbnRhY3Q=</p>
+        </div>
+    </footer>
+</body>
+</html>

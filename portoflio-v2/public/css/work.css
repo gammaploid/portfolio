@@ -1,0 +1,227 @@
+/* Work */
+
+.work-head {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.work-intro {
+    max-width: 44ch;
+    color: var(--fog);
+}
+
+@media (min-width: 960px) {
+    .work-head {
+        grid-template-columns: 1fr minmax(0, 26rem);
+        align-items: end;
+    }
+}
+
+/* Mirsad, the flagship: result windows on a violet field */
+
+.flag-field {
+    padding: clamp(24px, 4vw, 56px) clamp(14px, 4vw, 56px);
+}
+
+.flag-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.stat-win .win-body {
+    display: grid;
+    gap: 0.6rem;
+}
+
+/* Results are set on a teal band. */
+.stat {
+    width: fit-content;
+    padding: 2px 10px 0;
+    background: var(--teal);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: clamp(44px, 5.4vw, 77px);
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+.stat-small .stat {
+    font-size: clamp(33px, 3.6vw, 55px);
+}
+
+.yard-win .case-cover {
+    aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 1000px) {
+    .flag-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .flag-grid .stat-main { grid-column: 1 / 8; }
+    .flag-grid .term { grid-column: 8 / 13; grid-row: 1 / 3; }
+    .flag-grid .yard-win { grid-column: 1 / 8; grid-row: 2 / 4; }
+    .flag-grid .stat-digs { grid-column: 8 / 13; }
+}
+
+.flag-body {
+    display: grid;
+    gap: 1.5rem 4rem;
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+@media (min-width: 960px) {
+    .flag-body {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+}
+
+/* Other cases */
+
+.cases {
+    display: grid;
+    gap: clamp(4.5rem, 9vw, 7rem);
+    margin-top: clamp(5rem, 10vw, 8rem);
+}
+
+.case {
+    display: grid;
+    gap: 1.75rem;
+    align-items: center;
+}
+
+.case-cover {
+    aspect-ratio: 10 / 7;
+    overflow: hidden;
+    margin-top: 3px;
+    background: var(--char-2);
+    box-shadow: var(--sunken);
+}
+
+.case-cover svg {
+    width: 100%;
+    height: 100%;
+}
+
+.case-context {
+    margin-bottom: 0.75rem;
+    font: var(--ui-size) / 1.3 var(--ui);
+    color: var(--teal);
+}
+
+.case-title {
+    font-weight: 600;
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.case-sub {
+    margin-top: 0.6rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.case-desc {
+    max-width: 54ch;
+    margin-top: 1rem;
+    color: var(--fog);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.25rem;
+}
+
+/* Chips read like the panels of a status bar. */
+.chip {
+    padding: 4px 9px 3px;
+    background: var(--face);
+    box-shadow: inset 1px 1px var(--stone), inset -1px -1px var(--face-hi);
+    color: var(--ink);
+    font: var(--ui-size) / 1.2 var(--ui);
+}
+
+.chip b {
+    color: var(--field-teal);
+}
+
+.case-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.5rem;
+    align-items: center;
+    margin-top: 1.6rem;
+}
+
+@media (min-width: 960px) {
+    .case {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        gap: 4.5rem;
+    }
+
+    .case:nth-child(even) .case-media {
+        order: 2;
+    }
+}
+
+/* Archive */
+
+.archive {
+    margin-top: clamp(5rem, 10vw, 8rem);
+}
+
+.archive-list {
+    margin-top: 1.25rem;
+    border-top: 1px solid var(--line);
+}
+
+.archive-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "name kind" "desc desc";
+    gap: 0.2rem 1.5rem;
+    padding-block: 1.05rem;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: padding 0.3s var(--ease-out), background-color 0.2s;
+}
+
+.archive-name {
+    grid-area: name;
+    font-weight: 600;
+}
+
+.archive-desc {
+    grid-area: desc;
+    font-size: 0.95rem;
+    color: var(--fog);
+}
+
+.archive-kind {
+    grid-area: kind;
+    font: var(--ui-size) / 1.3 var(--ui);
+    color: var(--fog);
+    text-align: right;
+}
+
+.archive-list a:hover {
+    padding-inline: 0.75rem;
+    background: var(--char-2);
+}
+
+.archive-list a:hover .archive-kind {
+    color: var(--accent);
+}
+
+@media (min-width: 860px) {
+    .archive-list a {
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) 6rem;
+        grid-template-areas: "name desc kind";
+        align-items: baseline;
+    }
+}
