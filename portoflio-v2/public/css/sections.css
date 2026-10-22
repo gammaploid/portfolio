@@ -92,7 +92,8 @@
 }
 
 .hero-name {
-    font-weight: 600;
+    font-family: var(--font-intro);
+    font-weight: 700;
     font-size: clamp(2rem, 3.4vw, 3rem);
     line-height: 1.05;
     letter-spacing: -0.035em;
@@ -100,6 +101,7 @@
 
 .hero-lede {
     margin-top: 0.7rem;
+    font-family: var(--font-intro);
     font-size: clamp(1.05rem, 1.4vw, 1.25rem);
     line-height: 1.5;
     color: var(--fog);

@@ -52,6 +52,7 @@
     --field-violet: #6a52cf;
     --field-teal: #1f7a6b;
     --font: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-intro: "Plus Jakarta Sans", var(--font);
     --ui: "Pixel Operator", "MS Sans Serif", "Microsoft Sans Serif", Tahoma, Geneva, sans-serif;
     --mono: "Departure Mono", ui-monospace, "SF Mono", Menlo, monospace;
     --font-ar: "Arabixel Basic", "Geeza Pro", "Noto Kufi Arabic", sans-serif;

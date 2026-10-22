@@ -285,6 +285,7 @@
 }
 
 .pix {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(var(--cols, 17), 1fr);
     gap: clamp(3px, 0.45vw, 6px);
@@ -303,7 +304,8 @@
     background: var(--paper);
 }
 
-.pix-wrap::after {
+/* The print head rides on the grid, so a paddle lane beside it doesn't stretch its path. */
+.pix::after {
     content: "";
     position: absolute;
     left: -6px;
@@ -315,7 +317,7 @@
     pointer-events: none;
 }
 
-.pix-wrap.is-printing::after {
+.pix-wrap.is-printing .pix::after {
     animation: print-head var(--print, 1.1s) steps(7, end) forwards;
 }
 
@@ -332,6 +334,52 @@
     100% {
         opacity: 0;
         transform: translateY(700%);
+    }
+}
+
+/* Brick breaker on the numerals (js/breakout.js). Mouse devices keep a lane beside each
+   numeral for its paddle; touch screens and reduced motion leave the numerals still. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .js .pix-wrap[data-game] {
+        --lane: 64px;
+        padding-right: var(--lane);
+    }
+
+    .js .pix-wrap[data-game="bottom"] {
+        padding-bottom: var(--lane);
+    }
+
+    /* Both numerals keep the right-hand lane, so their pixels stay the same size. */
+    .js .award .pix-wrap[data-game] {
+        max-width: calc(34rem + var(--lane));
+    }
+}
+
+.pix-wrap > canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.pix-wrap.is-playing {
+    cursor: none;
+}
+
+.pix.is-printed i.on.gone {
+    background: rgba(231, 228, 221, 0.055);
+    transition: none;
+    animation: brick-break 0.3s steps(3, end);
+}
+
+.pix.is-resetting i.on {
+    transition: none;
+}
+
+@keyframes brick-break {
+    from {
+        background: var(--accent);
     }
 }
 
